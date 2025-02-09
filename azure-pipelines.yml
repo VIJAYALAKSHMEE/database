@@ -1,11 +1,11 @@
 pool:
-  name: 'rollout'
+  name: 'jump-server'
 
 stages:
 - stage: Deploy
   jobs:
   - job: DeployMongoDB
-    displayName: 'Deploy MongoDB to Kubernetes Namespace three-tier'
+    displayName: 'Deploy MongoDB to Kubernetes Namespace project-one'
     steps:
     - task: Kubernetes@1
       inputs:
@@ -14,7 +14,7 @@ stages:
         kubernetesServiceEndpoint: 'k8sconnection'
         azureResourceGroup: 'dev-env'
         kubernetesCluster: 'dev-cluster'
-        namespace: 'three-tier'
+        namespace: 'project-one'
         command: 'apply'
         arguments: '-f DB/database.yml'
       displayName: 'Deploy MongoDB to Kubernetes'
