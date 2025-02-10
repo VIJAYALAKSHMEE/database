@@ -1,5 +1,5 @@
 pool:
-  name: 'jump-server'
+  name: 'jump-server-vm'
 
 stages:
 - stage: Deploy
